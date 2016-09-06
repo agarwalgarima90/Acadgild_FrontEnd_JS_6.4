@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+        <script>
+                function checkBrackets(exp) {
+                        var a = [];
+                        var open = [];
+                        var close = [];
+                        for (i = 0; i<exp.length; i++) {
+                                a.push(exp.charAt(i));
+                        }
+
+                        for(i=0; i<a.length; i++) {
+                                if (a[i] == '(') {
+                                        open.push(a[i]);
+                                }
+                                if (a[i] == ')') {
+                                        close.push(a[i]);
+                                }
+                        }
+
+                        if(open.length == close.length) {
+                                document.write("Correct");
+                        }
+                        else {
+                                document.write("Incorrect");
+                        }
+                        document.write("<br>");
+                }
+        </script>
+</head>
+<body>
+        <script>
+                checkBrackets("( ' ( ( a + b ) / 5 abd ) ' )");
+                checkBrackets("( ' ) ( a + b ) ) ' ) ");
+                checkBrackets("( ' ( b *  ( c + d * 2 / ( 2 + ( 12 abc / ( a + 3 ) ) ) ) ' )");
+        </script>
+
+</body>
+</html>
